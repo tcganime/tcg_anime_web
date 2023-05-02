@@ -1,0 +1,24 @@
+.collection-lower-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+}
+
+.up-collection-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.deck-title {
+    font-size: 3rem;
+}
+
+.deck-container {
+    font-size: 2rem;
+}
+
+.none-deck {
+    font-family: StoneSerifLTItalic;
+}
