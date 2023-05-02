@@ -1,14 +1,13 @@
 .home-upper-container {
-    text-align: center;
+    flex: 1;
 }
 
 .home-lower-container {
+    flex: 3;
     display: flex;
     flex-direction: column;
-    margin: 0 25%;
     justify-content: center;
-}
-
-.container-separator {
-    margin: 2.25rem 0;
+    align-items: center;
+    min-height: 50vh;
+    justify-content: space-around;
 }

@@ -2,8 +2,12 @@ import { Button } from '@mui/material'
 import React from  'react'
 
 import './Collection.scss'
+import { useNavigate } from 'react-router-dom'
 
 function Collection() {
+
+    const navigation = useNavigate()
+
     return (
         <div className='home-container'>
             <div className='home-upper-container'>
@@ -19,6 +23,9 @@ function Collection() {
                         <p className='none-deck'> You don't have any deck yet </p>
                     </div>
                 </div>
+            </div>
+            <div>
+                <Button variant="contained" color="secondary" className='home-button' onClick={() => {navigation("/")}}> Back </Button>
             </div>
         </div>
     )

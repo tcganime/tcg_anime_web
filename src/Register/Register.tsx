@@ -155,7 +155,7 @@ function Register() {
                     onClick={() => register()}
                     style={{
                         backgroundColor: '#ffc922',
-                        color: '#000000',
+                        color: '#4A5899',
                         fontFamily: 'StoneSerifLTItalic',
                         fontSize: '1.5rem'
                     }}
@@ -163,6 +163,18 @@ function Register() {
                 >
                     Register
                 </Button>
+                <div className='home-form-container-separator' />
+                <p className='register-already-account'
+                    style={{
+                        cursor: 'pointer',
+                        textDecoration: 'underline',
+                    }}
+                    onClick={() => {
+                        navigation('/login')
+                    }}
+                > 
+                    Already have an account ? 
+                </p>
             </div>
         </div>
     )

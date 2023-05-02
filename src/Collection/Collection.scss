@@ -1,24 +1,40 @@
 .collection-lower-container {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    flex: 3;
+    width: 100%;
     justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    justify-content: space-around;
 }
 
 .up-collection-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    margin: 0 10%;
+    justify-content: center;
+    align-items: center;
 }
 
-.deck-title {
-    font-size: 3rem;
+.down-collection-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .deck-container {
-    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .none-deck {
-    font-family: StoneSerifLTItalic;
+    font-size: 1rem;
+    font-style: italic;
 }

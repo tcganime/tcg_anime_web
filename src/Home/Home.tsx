@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 const buttonStyle : React.CSSProperties = {
     fontFamily: 'StoneSerifSemibold',
-    fontSize: '1.25rem'
+    fontSize: '1.25rem',
+    width: '100%',
 }
 
 function Home() {
@@ -25,15 +26,18 @@ function Home() {
             <div className='home-upper-container'>
                 <h1> Welcome to the Anime TCG ! </h1>
             </div>
-            <div className='container-separator' />
             <div className='home-lower-container'>
-                <Button variant="contained" color="secondary" style={buttonStyle}> Play </Button>
+                <Button variant="contained" color="secondary" style={buttonStyle} className='home-button'> Play </Button>
                 <div className='container-separator' />
                 <Button variant="contained" color="secondary" style={buttonStyle} onClick={() => {navigation("/collection")}}> Deck Builder </Button>
                 <div className='container-separator' />
                 <Button variant="contained" color="secondary" style={buttonStyle}> Profile </Button>
                 <div className='container-separator' />
-                <Button variant="contained" color="secondary" style={buttonStyle}> Log Out </Button>
+                <Button variant="contained" color="secondary" style={buttonStyle} onClick={() => {
+                    localStorage.removeItem("token")
+                    navigation("/login")
+                }}
+                > Logout </Button>
             </div>
         </div>
     )
