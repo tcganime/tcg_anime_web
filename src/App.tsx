@@ -8,6 +8,7 @@ import Home from './Home/Home';
 
 import './App.scss'
 import Collection from './Collection/Collection';
+import Register from './Register/Register';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register/>} />
           <Route path="/collection" element={<Collection/>} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>

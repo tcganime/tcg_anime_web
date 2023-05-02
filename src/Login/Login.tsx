@@ -9,12 +9,29 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
 
     const navigation = useNavigate();
+    localStorage.removeItem('token')
 
     let [username, setUsername] = useState('')
     let [password, setPassword] = useState('')
 
     function login() {
-        navigation('/')
+        fetch('http://localhost:8000/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': username,
+                'password': password
+            })
+        }).then(res => {
+            (res.status === 200) ? res.json().then(data => {
+                localStorage.setItem('token', data.token)
+                navigation('/')
+            }) : res.json().then(data => {
+                console.log(data)
+            })
+        })
     }
 
     return (
@@ -94,6 +111,14 @@ function Login() {
                     onClick={() => login()}
                 > 
                     Log IN 
+                </Button>
+                <div className='home-form-container-separator' />
+                <Button
+                    variant="contained"
+                    style={{backgroundColor: '#ffc922', color: '#4A5899', fontSize: '1.15rem'}}
+                    onClick={() => navigation('/register')}
+                >
+                    Register
                 </Button>
             </div>
         </div>

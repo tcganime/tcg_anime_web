@@ -1,4 +1,4 @@
-import React from  'react'
+import React, { useEffect } from  'react'
 
 import './Home.scss'
 import { Button } from '@mui/material';
@@ -13,6 +13,12 @@ const buttonStyle : React.CSSProperties = {
 function Home() {
 
     const navigation = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem("token") == null) {
+            navigation("/login")
+        }
+    }, [navigation])
 
     return (
         <div className='home-container'>
