@@ -10,6 +10,7 @@ function Login() {
 
     const navigation = useNavigate();
     localStorage.removeItem('token')
+    localStorage.removeItem('is_admin')
 
     let [username, setUsername] = useState('')
     let [password, setPassword] = useState('')
@@ -27,6 +28,7 @@ function Login() {
         }).then(res => {
             (res.status === 200) ? res.json().then(data => {
                 localStorage.setItem('token', data.token)
+                localStorage.setItem('is_admin', data.admin)
                 navigation('/')
             }) : res.json().then(data => {
                 console.log(data)

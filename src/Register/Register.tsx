@@ -9,6 +9,7 @@ function Register() {
 
     const navigation = useNavigate();
     localStorage.removeItem('token')
+    localStorage.removeItem('is_admin')
 
     let [username, setUsername] = useState('')
     let [email, setEmail] = useState('')
@@ -32,6 +33,7 @@ function Register() {
             if (res.status === 201) {
                 res.json().then(data => {
                     localStorage.setItem('token', data.token)
+                    localStorage.setItem('is_admin', data.admin)
                     navigation('/')
                 })
             } else if (res.status === 400) {
