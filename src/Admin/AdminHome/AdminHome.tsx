@@ -25,7 +25,7 @@ function AdminHome() {
             </div>
             <div className='home-lower-container'>
                 <Button variant='contained' color='secondary' style={buttonStyle} onClick={() => navigate('/admin/search')}>Search</Button>
-                <Button variant='contained' color='secondary' style={buttonStyle} onClick={() => console.log('create card')}>Create Card</Button>
+                <Button variant='contained' color='secondary' style={buttonStyle} onClick={() => navigate('/admin/card_create')}>Create Card</Button>
                 <Button variant='contained' color='secondary' style={buttonStyle} onClick={() => navigate('/')}> Return Home </Button>
             </div>
         </div>

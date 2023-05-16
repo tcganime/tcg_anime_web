@@ -61,6 +61,9 @@ const UserSearch = () => {
                             }
                         }}
                         type="search"
+                        style={{
+                            border: '1px solid #ffc922',
+                        }}
                         placeholder="Search"
                         variant="outlined"
                         InputProps={{
@@ -68,7 +71,8 @@ const UserSearch = () => {
                                 color: '#ffc922',
                                 fontFamily: 'StoneSerifLTItalic',
                                 fontSize: '1.5rem',
-                                border: '1px solid #ffc922',
+                                marginTop: '20px',
+                                border: '0px solid #ffc922',
                             }
                         }}
                         fullWidth={true}
@@ -79,7 +83,8 @@ const UserSearch = () => {
                             fontSize: '1.25rem',
                             marginTop: '7px',
                             justifyContent: 'center',
-                            alignSelf: 'center'
+                            alignSelf: 'center',
+                            border: '0px solid #ffc922',
                             }
                         }}
                     />
