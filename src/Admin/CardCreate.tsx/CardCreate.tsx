@@ -14,7 +14,7 @@ const CardCreate = () => {
     const [baseCard, setBaseCard] = useState<card.BaseCard>({
         name: '',
         description: '',
-        type: 'Monster',
+        type: 'Monstre ',
         image: ''
     })
 
@@ -123,9 +123,9 @@ const CardCreate = () => {
                             })
                         }}
                     >
-                        <MenuItem value='Monster'>Monstre</MenuItem>
-                        <MenuItem value='Spell'>Magie</MenuItem>
-                        <MenuItem value='Trap'>Piège</MenuItem>
+                        <MenuItem value='Monstre'>Monstre</MenuItem>
+                        <MenuItem value='Magie'>Magie</MenuItem>
+                        <MenuItem value='Piège'>Piège</MenuItem>
                     </Select>
                     <div className='spacer' />
                     <Button variant='contained' color='secondary' style={{
