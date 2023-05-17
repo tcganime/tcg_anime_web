@@ -40,15 +40,15 @@ const CreateMonsterCard = () => {
             },
             body: JSON.stringify({
                 'name': location.state?.name,
-                'archetypes': archetypes.join(','),
+                'archetypes': archetypes,
                 'level': monsterCard.level,
                 'atk': monsterCard.atk,
                 'def': monsterCard.def,
                 'attribute': monsterCard.attribute,
                 'card_type': monsterCard.subType,
-                'monster_type': monsterCard.monsterType.join(','),
+                'monster_type': monsterCard.monsterType,
                 'description': location.state?.description,
-                'effect': JSON.stringify(effects),
+                'effect': effects,
                 'image_url': location.state?.image,
             })
         }).then(res => {
