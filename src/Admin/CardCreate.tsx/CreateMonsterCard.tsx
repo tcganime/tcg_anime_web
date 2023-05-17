@@ -13,7 +13,7 @@ const CreateMonsterCard = () => {
     const [ monsterCard, setMonsterCard] = React.useState<Monster>({
         subType: 'Normal',
         monsterType: ['aucun', 'aucun'],
-        attribute: 'Dark',
+        attribute: 'Ténèbres',
         level: 1,
         atk: 0,
         def: 0,
@@ -26,7 +26,39 @@ const CreateMonsterCard = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
+
     console.log(location.state)
+
+    const onSubmit = () => {
+        console.log(localStorage.getItem('token'))
+        fetch('http://localhost:8000/cards/create/monster', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({
+                'name': location.state?.name,
+                'archetypes': archetypes.join(','),
+                'level': monsterCard.level,
+                'atk': monsterCard.atk,
+                'def': monsterCard.def,
+                'attribute': monsterCard.attribute,
+                'card_type': monsterCard.subType,
+                'monster_type': monsterCard.monsterType.join(','),
+                'description': location.state?.description,
+                'effect': JSON.stringify(effects),
+                'image_url': location.state?.image,
+            })
+        }).then(res => {
+            if (res.status === 201)
+                navigate('/admin')
+            else {
+                console.log(res)
+            }
+        })
+    }
 
 
     return (
@@ -46,7 +78,7 @@ const CreateMonsterCard = () => {
                         onChange={(e) => {
                             if (e.target.value === 'Normal') {
                                 setEffects([])
-                            } else if (e.target.value === 'Effect') {
+                            } else if (e.target.value === 'Effet') {
                                 setEffects([{
                                     type: 'REQUIS',
                                     description: ''
@@ -313,7 +345,7 @@ const CreateMonsterCard = () => {
                     onClick={() => {
                         monsterCard.archetypes = archetypes
                         effects.forEach((effect, index) => {
-                            if (monsterCard.monsterType[0] == 'aucun' && monsterCard.monsterType[1] == 'aucun') {
+                            if (monsterCard.monsterType[0] === 'aucun' && monsterCard.monsterType[1] === 'aucun') {
                                 alert('Séléctionnez au moins un type de monstre')
                                 return
                             }
@@ -323,7 +355,7 @@ const CreateMonsterCard = () => {
                             }
                         })
                         monsterCard.effect = effects
-                        console.log(monsterCard)
+                        onSubmit()
                 }}
                 style={{
                     fontSize: '1.5rem'
