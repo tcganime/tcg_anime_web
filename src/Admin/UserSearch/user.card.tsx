@@ -9,7 +9,7 @@ function UserCard(props: {user: User}) {
     const navigation = useNavigate();
 
     const setNewAdmin = (id: number, name: string) => {
-        fetch(`http://localhost:8000/users/admin`, {
+        fetch(`http://localhost:8000/admin/users/admin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

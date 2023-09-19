@@ -12,10 +12,10 @@ import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
 import AdminHome from '../Admin/AdminHome/AdminHome';
 import UserSearch from '../Admin/UserSearch/UserSearch';
-import CardCreate from '../Admin/CardCreate.tsx/CardCreate';
-import CreateMonsterCard from '../Admin/CardCreate.tsx/CreateMonsterCard';
-import CreateTrapCard from '../Admin/CardCreate.tsx/CreateTrapCard';
-import CreateSpellCard from '../Admin/CardCreate.tsx/CreateSpellCard';
+import CardCreate from '../Admin/CardCreate/CardCreate';
+import CreateMonsterCard from '../Admin/CardCreate/CreateMonsterCard';
+import CreateTrapCard from '../Admin/CardCreate/CreateTrapCard';
+import CreateSpellCard from '../Admin/CardCreate/CreateSpellCard';
 
 function AdminRoutes() {
   return (
