@@ -14,6 +14,8 @@ import AdminHome from '../Admin/AdminHome/AdminHome';
 import UserSearch from '../Admin/UserSearch/UserSearch';
 import CardCreate from '../Admin/CardCreate.tsx/CardCreate';
 import CreateMonsterCard from '../Admin/CardCreate.tsx/CreateMonsterCard';
+import CreateTrapCard from '../Admin/CardCreate.tsx/CreateTrapCard';
+import CreateSpellCard from '../Admin/CardCreate.tsx/CreateSpellCard';
 
 function AdminRoutes() {
   return (
@@ -27,6 +29,8 @@ function AdminRoutes() {
           <Route path="/admin/search" element={<UserSearch />} />
           <Route path="/admin/card_create" element={<CardCreate />} />
           <Route path="/admin/card_create/monster" element={<CreateMonsterCard />} />
+          <Route path="/admin/card_create/spell" element={<CreateSpellCard />} />
+          <Route path="/admin/card_create/trap" element={<CreateTrapCard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/collection" element={<Collection/>} />
           <Route path="*" element={<h1>404</h1>} />

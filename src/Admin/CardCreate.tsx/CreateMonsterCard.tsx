@@ -27,11 +27,8 @@ const CreateMonsterCard = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    console.log(location.state)
-
     const onSubmit = () => {
-        console.log(localStorage.getItem('token'))
-        fetch('http://localhost:8000/cards/create/monster', {
+        fetch('http://localhost:8000/monsters/create/', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -52,9 +49,10 @@ const CreateMonsterCard = () => {
                 'image_url': location.state?.image,
             })
         }).then(res => {
-            if (res.status === 201)
+            if (res.status === 201) {
+                alert('Carte créée avec succès')
                 navigate('/admin')
-            else {
+            } else {
                 console.log(res)
             }
         })

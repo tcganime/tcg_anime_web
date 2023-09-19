@@ -12,6 +12,7 @@ const MonsterType = [
     'Guerrier',
     'Bête',
     'Bête-Guerrier',
+    'Bête Ailée',
     'Démon',
     'Fée',
     'Insecte',
@@ -35,6 +36,7 @@ const MonsterType = [
     'Union',
     'Jumeau',
     'Retournement',
+    'Zombie',
     'aucun'
 ]
 

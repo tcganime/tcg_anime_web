@@ -20,12 +20,13 @@ type Monster = {
 
 type Spell = {
     subType: string,
+    archetypes: string[],
     effect: Effect[]
 }
 
 type Trap = {
-
     subType: string,
+    archetypes: string[],
     effect: Effect[]
 }
 

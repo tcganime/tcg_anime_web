@@ -2,10 +2,10 @@
     flex: 3;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 70%;
+    width: 50%;
 }
 
 .card-spec-lower-container {
@@ -128,5 +128,5 @@
 }
 
 .effect-list {
-    width: 90%
+    width: 100%;
 }

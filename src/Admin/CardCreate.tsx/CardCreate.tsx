@@ -14,7 +14,7 @@ const CardCreate = () => {
     const [baseCard, setBaseCard] = useState<card.BaseCard>({
         name: '',
         description: '',
-        type: 'Monstre ',
+        type: 'Monstre',
         image: ''
     })
 
@@ -61,7 +61,7 @@ const CardCreate = () => {
                         variant="filled"
                         color="secondary"
                         style={{
-                            width: '60%'
+                            width: '100%'
                         }}
                         onChange={(e) => {
                             setBaseCard({
@@ -71,6 +71,10 @@ const CardCreate = () => {
                         }}
                     />
                 </div>
+                <div style={{
+                    'width': '50px'
+                }}
+                />
                 <div className='card-create-container'>
                     <TextField
                         id="Nom de la Carte"
