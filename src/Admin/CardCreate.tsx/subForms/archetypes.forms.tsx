@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material'
+import { TextField } from '@mui/material'
 import React from 'react'
 
 function ArchetypeForm(props: {archetypes: string[], setArchetypes: Function, index: number}) {

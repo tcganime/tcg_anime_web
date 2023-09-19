@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, MenuItem, Select, TextField } from '@mui/material'
+import { MenuItem, Select, TextField } from '@mui/material'
 import { Effect, effectTypes } from './effect.type'
 
 function EffectForm(props: {effects: Effect[], setEffects: Function, index: number}) {
